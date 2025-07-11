@@ -122,7 +122,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'inicio' / 'static',  # O ajusta al nombre de tu app
+    BASE_DIR / 'Inicio' / 'static',  # O ajusta al nombre de tu app
 ]
 # This production code might break development mode, so we check whether we're in DEBUG mode
 if not DEBUG:
