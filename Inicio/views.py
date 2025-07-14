@@ -20,6 +20,6 @@ def reserva (request):
 def contacto (request):
  return render(request, 'contacto.html')  
 
-def coming_soon(request):
+def comingsoon(request):
     return render(request, 'coming_soon.html')
     

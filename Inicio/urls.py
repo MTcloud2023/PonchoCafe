@@ -8,7 +8,7 @@ urlpatterns = [
     path('kontakt/',views.contacto),
     path('rezerwacje/',views.reserva, name='reserva'),
     path('o-klubie/',views.acercade),
-    path('coming-soon/', coming_soon, name='coming_soon'),
+    path('coming-soon/', views.comingsoon, name='coming_soon'),
 
 
 ]
