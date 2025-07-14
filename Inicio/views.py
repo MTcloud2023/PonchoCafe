@@ -19,4 +19,7 @@ def reserva (request):
     return render(request, 'reserva.html',{'hoy': hoy})
 def contacto (request):
  return render(request, 'contacto.html')  
+
+def coming_soon(request):
+    return render(request, 'coming_soon.html')
     
