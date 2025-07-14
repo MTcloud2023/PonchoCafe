@@ -12,8 +12,10 @@
   }
 
   body {
-    background: url("{% static 'img/1.png' %}") no-repeat center center;
+    background-image: url("{% static 'img/1.png' %}");
     background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
@@ -41,7 +43,7 @@
   }
 
   footer {
-    background: rgba(0, 0, 0, 0.0); /* fondo transparente */
+    background: transparent !important;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -111,12 +113,5 @@
 </script>
 {% endblock %}
 
-{% block footer %}
-<footer>
-  <div class="container">
-    <i class="fab fa-facebook"></i>
-    <i class="fab fa-instagram"></i>
-    <i class="fab fa-whatsapp"></i>
-  </div>
-</footer>
-{% endblock %}
+{% block footer %}{% endblock %}
+{% block extra_scripts %}{% endblock %}
