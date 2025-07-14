@@ -5,34 +5,42 @@
 
 {% block content %}
 <style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+
   body {
     background: url("{% static 'img/1.png' %}") center center no-repeat;
-    background-size: contain;
+    background-size: cover;
+    background-attachment: fixed;
     background-color: #000;
-    color: white;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
   }
 
   h1 {
     font-size: 4rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 8px #222;
+    text-align: center;
+    margin: 0;
+    text-shadow: 2px 2px 8px black;
   }
 
-  .countdown {
-    font-size: 2rem;
+  #countdown {
+    font-size: 2.2rem;
     margin-top: 20px;
+    text-shadow: 2px 2px 5px black;
   }
 </style>
 
 <h1>Coming Soon</h1>
-<div class="countdown" id="countdown">Cargando...</div>
+<div id="countdown">Cargando...</div>
 
 <script>
   const targetDate = new Date("2025-08-01T00:00:00").getTime();
@@ -42,7 +50,7 @@
     const diff = targetDate - now;
 
     if (diff <= 0) {
-      document.getElementById("countdown").innerHTML = "¡Ya estamos abiertos!";
+      document.getElementById("countdown").textContent = "¡Ya estamos abiertos!";
       return;
     }
 
@@ -51,10 +59,20 @@
     const minutes = Math.floor((diff / (1000 * 60)) % 60);
     const seconds = Math.floor((diff / 1000) % 60);
 
-    document.getElementById("countdown").innerHTML =
+    document.getElementById("countdown").textContent =
       `${days}d ${hours}h ${minutes}m ${seconds}s`;
   }
 
   setInterval(updateCountdown, 1000);
 </script>
 {% endblock %}
+
+{% block extra_head %}
+  <style>
+    nav, footer {
+      display: none !important;
+    }
+  </style>
+{% endblock %}
+
+{% block extra_scripts %}{% endblock %}
